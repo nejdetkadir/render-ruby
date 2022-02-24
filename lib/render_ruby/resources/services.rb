@@ -7,5 +7,9 @@ module RenderRuby
 
       Collection.from_response(response, type: Service)
     end
+
+    def retrieve(service_id:)
+      Service.new get_request("services/#{service_id}").body
+    end
   end
 end
