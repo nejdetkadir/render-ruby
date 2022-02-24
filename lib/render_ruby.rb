@@ -12,7 +12,9 @@ module RenderRuby
 
   # resources
   autoload :OwnerResource, 'render_ruby/resources/owners'
+  autoload :ServiceResource, 'render_ruby/resources/services'
 
   # objects
   autoload :Owner, 'render_ruby/objects/owner'
+  autoload :Service, 'render_ruby/objects/service'
 end
