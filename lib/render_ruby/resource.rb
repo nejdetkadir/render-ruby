@@ -31,7 +31,7 @@ module RenderRuby
     end
 
     def handle_response(response)
-      raise Error, response.body['message'] unless [200, 201].include?(response.status)
+      raise Error, response.body['message'] unless [200, 201, 204].include?(response.status)
 
       response
     end
