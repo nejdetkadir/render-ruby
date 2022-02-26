@@ -13,6 +13,7 @@ module RenderRuby
   # resources
   autoload :OwnerResource, 'render_ruby/resources/owners'
   autoload :ServiceResource, 'render_ruby/resources/services'
+  autoload :DeployResource, 'render_ruby/resources/deploys'
 
   # objects
   autoload :Owner, 'render_ruby/objects/owner'
@@ -21,4 +22,5 @@ module RenderRuby
   autoload :Header, 'render_ruby/objects/header'
   autoload :Rule, 'render_ruby/objects/rule'
   autoload :Scale, 'render_ruby/objects/scale'
+  autoload :Deploy, 'render_ruby/objects/deploy'
 end
