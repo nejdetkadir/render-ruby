@@ -15,5 +15,9 @@ module RenderRuby
     def create(**attributes)
       Service.new post_request('services', body: attributes).body
     end
+
+    def update(service_id:, **attributes)
+      Service.new patch_request("services/#{service_id}", body: attributes).body
+    end
   end
 end
