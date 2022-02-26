@@ -55,5 +55,9 @@ module RenderRuby
 
       Collection.from_response(response, type: Rule)
     end
+
+    def scale(service_id:, num_instances:)
+      Scale.new post_request("services/#{service_id}/scale", body: { numInstances: num_instances }).body
+    end
   end
 end

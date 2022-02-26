@@ -20,4 +20,5 @@ module RenderRuby
   autoload :EnvironmentVariable, 'render_ruby/objects/environment_variable'
   autoload :Header, 'render_ruby/objects/header'
   autoload :Rule, 'render_ruby/objects/rule'
+  autoload :Scale, 'render_ruby/objects/scale'
 end
