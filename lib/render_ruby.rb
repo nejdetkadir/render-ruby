@@ -17,4 +17,5 @@ module RenderRuby
   # objects
   autoload :Owner, 'render_ruby/objects/owner'
   autoload :Service, 'render_ruby/objects/service'
+  autoload :EnvironmentVariable, 'render_ruby/objects/environment_variable'
 end

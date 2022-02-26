@@ -31,5 +31,17 @@ module RenderRuby
     def resume(service_id:)
       post_request("services/#{service_id}/resume", body: {})
     end
+
+    def retrieve_env_vars(service_id:)
+      response = get_request("services/#{service_id}/env-vars")
+
+      Collection.from_response(response, type: EnvironmentVariable)
+    end
+
+    def update_env_var(service_id:, env_vars:)
+      response = put_request("services/#{service_id}/env-vars", body: env_vars)
+
+      Collection.from_response(response, type: EnvironmentVariable)
+    end
   end
 end
