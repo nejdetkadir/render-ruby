@@ -11,5 +11,9 @@ module RenderRuby
     def trigger(service_id:, clear_cache:)
       Deploy.new post_request("services/#{service_id}/deploys", body: { clearCache: clear_cache }).body
     end
+
+    def retrieve(service_id:, deploy_id:)
+      Deploy.new get_request("services/#{service_id}/deploys/#{deploy_id}").body
+    end
   end
 end
