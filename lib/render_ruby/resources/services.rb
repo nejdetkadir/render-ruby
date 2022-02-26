@@ -23,5 +23,13 @@ module RenderRuby
     def delete(service_id:)
       delete_request("services/#{service_id}")
     end
+
+    def suspend(service_id:)
+      post_request("services/#{service_id}/suspend", body: {})
+    end
+
+    def resume(service_id:)
+      post_request("services/#{service_id}/resume", body: {})
+    end
   end
 end
