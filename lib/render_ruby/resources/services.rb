@@ -19,5 +19,9 @@ module RenderRuby
     def update(service_id:, **attributes)
       Service.new patch_request("services/#{service_id}", body: attributes).body
     end
+
+    def delete(service_id:)
+      delete_request("services/#{service_id}")
+    end
   end
 end
