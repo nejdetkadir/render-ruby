@@ -22,6 +22,10 @@ module RenderRuby
       ServiceResource.new(self)
     end
 
+    def deploys
+      DeployResource.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :authorization, :Bearer, api_key
