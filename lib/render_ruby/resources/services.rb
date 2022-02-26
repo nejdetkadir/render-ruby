@@ -11,5 +11,9 @@ module RenderRuby
     def retrieve(service_id:)
       Service.new get_request("services/#{service_id}").body
     end
+
+    def create(**attributes)
+      Service.new post_request('services', body: attributes).body
+    end
   end
 end
