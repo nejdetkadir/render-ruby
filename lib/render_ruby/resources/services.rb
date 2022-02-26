@@ -32,8 +32,8 @@ module RenderRuby
       post_request("services/#{service_id}/resume", body: {})
     end
 
-    def retrieve_env_vars(service_id:)
-      response = get_request("services/#{service_id}/env-vars")
+    def retrieve_env_vars(service_id:, **params)
+      response = get_request("services/#{service_id}/env-vars", params: params)
 
       Collection.from_response(response, type: EnvironmentVariable)
     end
@@ -42,6 +42,18 @@ module RenderRuby
       response = put_request("services/#{service_id}/env-vars", body: env_vars)
 
       Collection.from_response(response, type: EnvironmentVariable)
+    end
+
+    def retrieve_headers(service_id:, **params)
+      response = get_request("services/#{service_id}/headers", params: params)
+
+      Collection.from_response(response, type: Header)
+    end
+
+    def retrieve_redirect_and_rewrite_rules(service_id:, **params)
+      response = get_request("services/#{service_id}/routes", params: params)
+
+      Collection.from_response(response, type: Rule)
     end
   end
 end

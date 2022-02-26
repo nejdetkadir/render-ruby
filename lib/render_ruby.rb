@@ -18,4 +18,6 @@ module RenderRuby
   autoload :Owner, 'render_ruby/objects/owner'
   autoload :Service, 'render_ruby/objects/service'
   autoload :EnvironmentVariable, 'render_ruby/objects/environment_variable'
+  autoload :Header, 'render_ruby/objects/header'
+  autoload :Rule, 'render_ruby/objects/rule'
 end
