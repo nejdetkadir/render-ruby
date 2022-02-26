@@ -7,5 +7,9 @@ module RenderRuby
 
       Collection.from_response(response, type: Deploy)
     end
+
+    def trigger(service_id:, clear_cache:)
+      Deploy.new post_request("services/#{service_id}/deploys", body: { clearCache: clear_cache }).body
+    end
   end
 end
