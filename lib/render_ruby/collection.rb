@@ -6,6 +6,9 @@ module RenderRuby
 
     def self.from_response(response, type:)
       body = response.body
+
+      return new(data: [], total: 0, next_cursor: '', prev_cursor: '') if body.empty?
+
       new(
         data: body.map { |attrs| type.new(attrs) },
         total: body.count,
