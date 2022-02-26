@@ -30,27 +30,10 @@ module RenderRuby
       handle_response client.connection.delete(url, params, headers)
     end
 
-    # rubocop:disable Metrics/CyclomaticComplexity
     def handle_response(response)
-      case response.status
-      when 400
-        raise Error, "Your request was malformed. #{response.body}"
-      when 401
-        raise Error, "You did not supply valid authentication credentials. #{response.body}"
-      when 403
-        raise Error, "You are not allowed to perform that action. #{response.body}"
-      when 404
-        raise Error, "No results were found for your request. #{response.body}"
-      when 429
-        raise Error, "Your request exceeded the API rate limit. #{response.body}"
-      when 500
-        raise Error, "We were unable to perform the request due to server-side problems. #{response.body}"
-      when 503
-        raise Error, "You have been rate limited for sending more than 30 requests per minute. #{response.body}"
-      end
+      raise Error, response.body['message'] unless [200, 201].include?(response.status)
 
       response
     end
-    # rubocop:enable Metrics/CyclomaticComplexity
   end
 end
