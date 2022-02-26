@@ -90,20 +90,20 @@ RenderRuby::Service::TYPES
 #=> ['static_site', 'web_service', 'private_service', 'background_worker', 'cron_job']
 
 client.services.create(
-	type: RenderRuby::Service::TYPES.sample,
-	name: 'foo bar',
-	ownerId: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	repo: 'https://github.com/render-examples/flask-hello-world',
-	autoDeploy: 'yes', # or 'no',
-	branch: 'master'
+  type: RenderRuby::Service::TYPES.sample,
+  name: 'foo bar',
+  ownerId: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  repo: 'https://github.com/render-examples/flask-hello-world',
+  autoDeploy: 'yes', # or 'no',
+  branch: 'master'
 )
 #=> RenderRuby::Service
 
 client.services.update(
-	service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	name: 'foo bar',
-	autoDeploy: 'yes', # or 'no',
-	branch: 'master'
+  service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  name: 'foo bar',
+  autoDeploy: 'yes', # or 'no',
+  branch: 'master'
 )
 #=> RenderRuby::Service
 
@@ -120,13 +120,13 @@ client.services.retrieve_env_vars(service_id:'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ')
 #=> RenderRuby::Collection
 
 client.services.update_env_var(
-	service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	env_vars: [
-		{
-			name: 'FOO',
-			value: 'bar'
-		}
-	]
+  service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  env_vars: [
+    {
+       name: 'FOO',
+       value: 'bar'
+    }
+  ]
 )
 #=> RenderRuby::EnvironmentVariable
 
@@ -155,9 +155,9 @@ client.jobs.retrieve(service_id: 'XMTjXEjiQJm', job_id: 'XMTjXEjiQJ')
 #=> RenderRuby::Job
 
 client.jobs.create(
-	service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	start_command: 'yarn dev',
-	planId: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ' # optional
+  service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  start_command: 'yarn dev',
+  planId: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ' # optional
 )
 #=> RenderRuby::Job
 ```
@@ -171,8 +171,8 @@ client.deploys.retrieve(service_id: 'XMTjXEjiQJm', deploy_id: 'XMTjXEjiQJ')
 #=> RenderRuby::Deploy
 
 client.deploys.trigger(
-	service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	clear_cache: 'clear' # or 'do_not_clear'
+  service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  clear_cache: 'clear' # or 'do_not_clear'
 )
 #=> RenderRuby::Deploy
 ```
@@ -186,8 +186,8 @@ client.custom_domains.retrieve(service_id: 'XMTjXEjiQJm', custom_domain_id: 'XMT
 #=> RenderRuby::CustomDomain
 
 client.custom_domains.create(
-	service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
-	domain: 'www.nejdetkadirbektas.com'
+  service_id: 'XMTjXEjiQJmNjEwZ2QwZWQ5N2x2MGZ',
+  domain: 'www.nejdetkadirbektas.com'
 )
 #=> RenderRuby::CustomDomain
 
