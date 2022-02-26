@@ -26,6 +26,10 @@ module RenderRuby
       DeployResource.new(self)
     end
 
+    def custom_domains
+      CustomDomainResource.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :authorization, :Bearer, api_key

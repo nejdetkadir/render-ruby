@@ -14,6 +14,7 @@ module RenderRuby
   autoload :OwnerResource, 'render_ruby/resources/owners'
   autoload :ServiceResource, 'render_ruby/resources/services'
   autoload :DeployResource, 'render_ruby/resources/deploys'
+  autoload :CustomDomainResource, 'render_ruby/resources/custom_domains'
 
   # objects
   autoload :Owner, 'render_ruby/objects/owner'
@@ -23,4 +24,5 @@ module RenderRuby
   autoload :Rule, 'render_ruby/objects/rule'
   autoload :Scale, 'render_ruby/objects/scale'
   autoload :Deploy, 'render_ruby/objects/deploy'
+  autoload :CustomDomain, 'render_ruby/objects/custom_domain'
 end
